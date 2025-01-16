@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <div className="space-y-8">
-      <header className="text-center">
+      <header className="text-center mt-10">
         <h1 className="text-4xl font-bold text-gray-900">
           Galactic Pet Adoption
         </h1>

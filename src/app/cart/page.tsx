@@ -16,7 +16,7 @@ export default function CartPage() {
 
   if (cartItems.length === 0) {
     return (
-      <div className="text-center py-12">
+      <div className="text-center py-12 mt-10">
         <h2 className="text-2xl font-bold text-gray-900">Your Cart is Empty</h2>
         <p className="mt-4 text-gray-600">
           Explore our galactic pets and find your perfect companion!
@@ -33,7 +33,7 @@ export default function CartPage() {
 
   return (
     <div className="space-y-8">
-      <header className="text-center">
+      <header className="text-center mt-10">
         <h1 className="text-4xl font-bold text-gray-900">Your Cart</h1>
         <p className="mt-4 text-lg text-gray-600">
           Review your selected companions

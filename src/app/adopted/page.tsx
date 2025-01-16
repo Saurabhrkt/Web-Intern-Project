@@ -12,7 +12,7 @@ export default function AdoptedPage() {
   if (adoptedPets.length === 0) {
     return (
       <div className="text-center py-12">
-        <h2 className="text-2xl font-bold text-gray-900">No Adopted Pets Yet</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mt-10">No Adopted Pets Yet</h2>
         <p className="mt-4 text-gray-600">
           Start your journey of pet adoption today!
         </p>
@@ -28,7 +28,7 @@ export default function AdoptedPage() {
 
   return (
     <div className="space-y-8">
-      <header className="text-center">
+      <header className="text-center mt-10">
         <h1 className="text-4xl font-bold text-gray-900">Your Adopted Pets</h1>
         <p className="mt-4 text-lg text-gray-600">
           Your wonderful galactic family

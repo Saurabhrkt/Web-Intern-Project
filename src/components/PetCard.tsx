@@ -27,7 +27,7 @@ export function PetCard({
   isCartPage = false,
 }: PetCardProps) {
   const [quantity, setQuantity] = React.useState(initialQuantity);
-  const { addToCart, updateCartQuantity } = usePetStore();
+  const { addToCart, updateCartQuantity,removeFromCart, adoptPets} = usePetStore();
 
   const handleQuantityChange = (newQuantity: number) => {
     setQuantity(newQuantity);
@@ -48,12 +48,10 @@ export function PetCard({
  
   };
   const handleBuy =()=>{
-    if (quantity > 0) {
-      
-    }
+    adoptPets();
   }
 const handleRemove =()=>{
-  setQuantity(0);
+  removeFromCart(id);
 }
   return (
     <Card className="overflow-hidden">
