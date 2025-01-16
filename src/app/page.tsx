@@ -5,9 +5,10 @@ import { usePetStore } from '@/store/usePetStore';
 
 export default function Home() {
   const pets = usePetStore(state => state.pets);
+  
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 ">
       <header className="text-center mt-10">
         <h1 className="text-4xl font-bold text-gray-900">
           Galactic Pet Adoption

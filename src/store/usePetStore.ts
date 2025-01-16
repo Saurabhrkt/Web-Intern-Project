@@ -68,6 +68,34 @@ const samplePets: Pet[] = [
     planet: 'Mercury',
     image: '/images/img6.jpg',
     price: 279.99
+  },
+  {
+    id: '7',
+    name: "Cosmo",
+    planet: "Mercury",
+    image: '/images/img7.jpg',
+    price:431.05
+  },
+  {
+    id: '8',
+    name: 'Orbitron',
+    planet: 'Neptune',
+    image: '/images/img8.jpg',
+    price: 872.83
+  },
+  {
+    id: '9',
+    name: 'Nova',
+    planet: 'Mercury',
+    image: '/images/img9.png',
+    price: 310.91
+  },
+  {
+    id: '10',
+    name: 'Cosmo',
+    planet: 'Venus',
+    image: '/images/img10.webp',
+    price: 133.07
   }
 ];
 

@@ -20,7 +20,7 @@ export default function AdoptedPage() {
           className="mt-6"
           onClick={() => router.push('/')}
         >
-          Find a Pet
+        Find a Pet
         </Button>
       </div>
     );

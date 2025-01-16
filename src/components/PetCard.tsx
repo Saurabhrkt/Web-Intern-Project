@@ -53,6 +53,49 @@ export function PetCard({
 const handleRemove =()=>{
   removeFromCart(id);
 }
+ const onCart =()=>{
+  if(isCartPage){
+    return( 
+    <>
+    <Button 
+    className ={` w-full ${isCartPage ? "bg-green-600 shadow-sm hover:bg-green-500" :""}`}
+    onClick={handleAddToCart}
+    disabled={quantity === 0}       
+    >
+    Place your order
+    </Button>
+    <Button 
+    className ="w-full bg-red-600 shadow-sm hover:bg-red-500"
+    onClick={handleRemove}
+    >
+      Remove From Cart
+    </Button>
+    </>
+      )
+    }
+    else{
+      return(
+        <>
+        <Button 
+        className ={` w-full ${isCartPage ? "bg-green-600 shadow-sm hover:bg-green-500" :""}`}
+        onClick={handleAddToCart}
+        disabled={quantity === 0}
+        >
+        Add to Cart
+        </Button>
+        <Button 
+        className ="w-full bg-green-500 shadow-sm hover:bg-green-400"
+        onClick={handleBuy}
+        disabled={quantity === 0}
+        >
+        Buy Now
+        </Button>
+
+       </>
+      )
+    } 
+ }
+
   return (
     <Card className="overflow-hidden">
       <CardHeader className="p-0">
@@ -62,14 +105,15 @@ const handleRemove =()=>{
             alt={name}
             fill
             className="object-cover"
-            unoptimized // Add this for external images
+            unoptimized ={true} // Add this for external images
+            priority={true}
           />
         </div>
       </CardHeader>
       <CardContent className="p-4">
         <h3 className="text-lg font-semibold">{name}</h3>
         <p className="text-sm text-gray-500">From {planet}</p>
-        <p className="text-lg font-bold mt-2">${price.toFixed(2)}</p>
+        <p className="text-lg font-bold mt-2">₹{price.toFixed(2)}</p>
       </CardContent>
       <CardFooter className="p-4 pt-0">
         {showQuantityControls && (
@@ -91,31 +135,7 @@ const handleRemove =()=>{
                 <Plus className="h-4 w-4" />
               </Button>
             </div>
-            <Button 
-              className ={` w-full ${isCartPage ? "bg-green-600 shadow-sm hover:bg-green-500" :""}`}
-              onClick={handleAddToCart}
-              disabled={quantity === 0}
-             
-            >
-              {isCartPage ? 'Place your order' : 'Add to Cart'}
-            </Button>
-            {
-              isCartPage ? (<Button 
-                className ="w-full bg-red-600 shadow-sm hover:bg-red-500"
-                onClick={handleRemove}
-                
-               
-              >
-                Remove From Cart
-              </Button>) :( <Button 
-                className ="w-full bg-green-500 shadow-sm hover:bg-green-400"
-                onClick={handleBuy}
-                disabled={quantity === 0}
-               
-              >
-                Buy Now
-              </Button>)
-            }
+            {onCart()}
           </div>
         )}
       </CardFooter>

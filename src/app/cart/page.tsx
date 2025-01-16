@@ -55,14 +55,14 @@ export default function CartPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="text-lg">
-              Total: <span className="font-bold">${getCartTotal().toFixed(2)}</span>
+              Total: <span className="font-bold">₹{getCartTotal().toFixed(2)}</span>
             </div>
             <Button
               size="lg"
               onClick={handleAdopt}
               disabled={cartItems.length === 0}
             >
-              Adopt Now
+            Adopt Now
             </Button>
           </div>
         </div>
