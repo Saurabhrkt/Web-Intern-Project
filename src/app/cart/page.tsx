@@ -46,6 +46,7 @@ export default function CartPage() {
             key={pet.id}
             {...pet}
             initialQuantity={pet.quantity}
+            isCartPage = {true}
           />
         ))}
       </div>

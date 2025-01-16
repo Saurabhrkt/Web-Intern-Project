@@ -13,6 +13,7 @@ interface PetCardProps {
   price: number;
   showQuantityControls?: boolean;
   initialQuantity?: number;
+  isCartPage?: boolean;
 }
 
 export function PetCard({
@@ -23,6 +24,7 @@ export function PetCard({
   price,
   showQuantityControls = true,
   initialQuantity = 0,
+  isCartPage = false,
 }: PetCardProps) {
   const [quantity, setQuantity] = React.useState(initialQuantity);
   const { addToCart, updateCartQuantity } = usePetStore();
@@ -35,12 +37,24 @@ export function PetCard({
   };
 
   const handleAddToCart = () => {
+    if (!isCartPage){
     if (quantity > 0) {
       addToCart({ id, name, planet, image, price }, quantity);
-      setQuantity(0);
     }
+  }
+  else{
+    setQuantity(0);
+  }
+ 
   };
-
+  const handleBuy =()=>{
+    if (quantity > 0) {
+      
+    }
+  }
+const handleRemove =()=>{
+  setQuantity(0);
+}
   return (
     <Card className="overflow-hidden">
       <CardHeader className="p-0">
@@ -80,12 +94,30 @@ export function PetCard({
               </Button>
             </div>
             <Button 
-              className="w-full"
+              className ={` w-full ${isCartPage ? "bg-green-600 shadow-sm hover:bg-green-500" :""}`}
               onClick={handleAddToCart}
               disabled={quantity === 0}
+             
             >
-              Add to Cart
+              {isCartPage ? 'Place your order' : 'Add to Cart'}
             </Button>
+            {
+              isCartPage ? (<Button 
+                className ="w-full bg-red-600 shadow-sm hover:bg-red-500"
+                onClick={handleRemove}
+                
+               
+              >
+                Remove From Cart
+              </Button>) :( <Button 
+                className ="w-full bg-green-500 shadow-sm hover:bg-green-400"
+                onClick={handleBuy}
+                disabled={quantity === 0}
+               
+              >
+                Buy Now
+              </Button>)
+            }
           </div>
         )}
       </CardFooter>

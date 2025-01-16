@@ -31,42 +31,42 @@ const samplePets: Pet[] = [
     id: '1',
     name: 'Zorblax',
     planet: 'Neptune',
-    image: 'https://picsum.photos/seed/zorblax/400/300',
+    image: '/images/img1.jpg',
     price: 299.99
   },
   {
     id: '2',
     name: 'Fluffy Nebula',
     planet: 'Venus',
-    image: 'https://picsum.photos/seed/nebula/400/300',
+    image: '/images/img2.jpg',
     price: 199.99
   },
   {
     id: '3',
     name: 'Quantum Whiskers',
     planet: 'Mars',
-    image: 'https://picsum.photos/seed/quantum/400/300',
+    image: '/images/img3.jpg',
     price: 399.99
   },
   {
     id: '4',
     name: 'Stellar Paws',
     planet: 'Jupiter',
-    image: 'https://picsum.photos/seed/stellar/400/300',
+    image: '/images/img4.jpg',
     price: 249.99
   },
   {
     id: '5',
     name: 'Cosmic Cuddles',
     planet: 'Saturn',
-    image: 'https://picsum.photos/seed/cosmic/400/300',
+    image: '/images/img5.jpg',
     price: 349.99
   },
   {
     id: '6',
     name: 'Nova Nuzzles',
     planet: 'Mercury',
-    image: 'https://picsum.photos/seed/nova/400/300',
+    image: '/images/img6.jpg',
     price: 279.99
   }
 ];
