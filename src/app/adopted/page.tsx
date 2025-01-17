@@ -41,6 +41,7 @@ export default function AdoptedPage() {
             key={pet.id}
             {...pet}
             showQuantityControls={false}
+          
           />
         ))}
       </div>

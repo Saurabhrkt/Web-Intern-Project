@@ -14,6 +14,7 @@ interface PetCardProps {
   showQuantityControls?: boolean;
   initialQuantity?: number;
   isCartPage?: boolean;
+
 }
 
 export function PetCard({
@@ -25,6 +26,7 @@ export function PetCard({
   showQuantityControls = true,
   initialQuantity = 0,
   isCartPage = false,
+
 }: PetCardProps) {
   const [quantity, setQuantity] = React.useState(initialQuantity);
   const { addToCart, updateCartQuantity,removeFromCart, adoptPets} = usePetStore();
@@ -47,7 +49,9 @@ export function PetCard({
   }
  
   };
-  const handleBuy =()=>{
+  const handleBuy = () => {
+
+    addToCart({ id, name, planet, image, price }, quantity);
     adoptPets();
   }
 const handleRemove =()=>{
@@ -83,6 +87,7 @@ const handleRemove =()=>{
         >
         Add to Cart
         </Button>
+        
         <Button 
         className ="w-full bg-green-500 shadow-sm hover:bg-green-400"
         onClick={handleBuy}
@@ -90,6 +95,8 @@ const handleRemove =()=>{
         >
         Buy Now
         </Button>
+
+      
 
        </>
       )
